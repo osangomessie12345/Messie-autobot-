@@ -3,7 +3,7 @@ module.exports.config = {
   eventType: ["log:subscribe", "log:unsubscribe"],
   version: "1.0.5",
   credits: "Messie Osango",
-  description: "✨ Notification d'arrivée, départ et expulsion ✨",
+  description: " Notification d'arrivée, départ et expulsion ",
   dependencies: {
     "fs-extra": "",
     "moment-timezone": ""
@@ -25,20 +25,20 @@ module.exports.run = async function ({ api, event, Threads, Users, botname, pref
                        event.logMessageData.removerFbId !== leftParticipant;
       
       const goodbyeMsg = wasKicked ? `
-╭─── 𝗘𝗫𝗣𝗨𝗟𝗦𝗜𝗢𝗡 ───⌾
+╭─── 𝐸𝑋𝑃𝑈𝐿𝑆𝐼𝑂𝑁───⌾
 │
-│  🚫 ${name} a été supprimé(e) du groupe
+│   ${name} a été supprimé(e) du groupe
 │
-│  📅 ${timeNow}
+│   ${timeNow}
 │
 │  Action effectuée par un administrateur
 ╰────────────────────⌾
       ` : `
-╭─── 𝗔𝗨 𝗥𝗘𝗩𝗢𝗜𝗥 ───⌾
+╭─── 𝐴𝑈 𝑅𝐸𝑉𝑂𝐼𝑅 ───⌾
 │
-│  🏃‍♂️ ${name} a quitté le groupe...
+│   ${name} a quitté le groupe...
 │
-│  📅 ${timeNow}
+│   ${timeNow}
 │
 │  Passez une bonne journée !
 ╰────────────────────⌾
@@ -56,7 +56,7 @@ module.exports.run = async function ({ api, event, Threads, Users, botname, pref
     if (added.some(i => i.userFbId == botID)) {
       await api.changeNickname(`[🤖] ${botname}`, threadID, botID);
       const botWelcome = `
-╭─── 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗗'𝗔𝗖𝗖𝗨𝗘𝗜𝗟 ───⌾
+╭─── 𝐽𝐸 𝑉𝑂𝑈𝑆 𝑅𝐸𝑀𝐸𝑅𝐶𝐼𝐸 ───⌾
 │
 │  ✨ 𝑀𝐸𝑆𝑆𝐼𝐸 𝐴𝑈𝑇𝑂𝐵𝑂𝑇 ✨  
 │
@@ -80,10 +80,10 @@ module.exports.run = async function ({ api, event, Threads, Users, botname, pref
       const welcomeMsg = `
 ╭─── 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗨𝗘 ───⌾
 │
-│  🎉 𝐵𝐼𝐸𝑁𝑉𝐸𝑁𝑈𝐸 ${names} !
+│   𝐵𝐼𝐸𝑁𝑉𝐸𝑁𝑈𝐸 ${names} !
 │  
-│  📅 ${timeNow}
-│  👤 Membre n°${memberCount}
+│  ${timeNow}
+│   Membre n°${memberCount}
 │
 │  Passez un bon séjour parmi nous !
 │  Je suis votre assistant virtuel Facebook
